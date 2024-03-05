@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book extends ModeloBase {
-    private int idlibros;
+    private int idbook;
     private String title;
     private String description;
     private String author;
@@ -25,12 +25,12 @@ public class Book extends ModeloBase {
         this.isbn = isbn;
     }
 
-    public int getIdlibros() {
-        return idlibros;
+    public int getIdbook() {
+        return idbook;
     }
 
-    public void setIdlibros(int idlibros) {
-        this.idlibros = idlibros;
+    public void setIdbook(int idlibros) {
+        this.idbook = idlibros;
     }
 
     public String getTitle() {
@@ -75,7 +75,7 @@ public class Book extends ModeloBase {
     @Override
     public String toString() {
         return "Book{" +
-                "idlibros=" + idlibros +
+                "idlibros=" + idbook +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", author='" + author + '\'' +
@@ -104,7 +104,7 @@ public class Book extends ModeloBase {
         List<Book> bookList = new ArrayList<>();
         while (resultSet.next()) {
             Book book = new Book();
-            book.setIdlibros(resultSet.getInt("idBook"));
+            book.setIdbook(resultSet.getInt("idBook"));
             book.setTitle(resultSet.getString("title"));
             book.setDescription(resultSet.getString("description"));
             book.setIsbn(resultSet.getString("isbn"));
