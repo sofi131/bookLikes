@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dff6d790-375c-42da-b3d6-52781b927df0" name="Changes" comment="Mi rama">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ceica/booklike/models/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ceica/booklike/models/ModeloBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="dff6d790-375c-42da-b3d6-52781b927df0" name="Changes" comment="Modelo libro" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +95,7 @@
       <updated>1709577460286</updated>
       <workItem from="1709577462158" duration="3000" />
       <workItem from="1709578433463" duration="139000" />
-      <workItem from="1709650414960" duration="1743000" />
+      <workItem from="1709650414960" duration="3235000" />
     </task>
     <task id="LOCAL-00001" summary="Mi rama">
       <option name="closed" value="true" />
@@ -109,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709577924063</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modelo libro">
+      <option name="closed" value="true" />
+      <created>1709653129560</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709653129560</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mi rama" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mi rama" />
+    <MESSAGE value="Modelo libro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modelo libro" />
   </component>
 </project>
