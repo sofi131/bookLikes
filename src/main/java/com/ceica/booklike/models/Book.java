@@ -11,12 +11,13 @@ public class Book extends ModeloBase {
     private String author;
     private String isbn;
     private Date dateB;
+    private int user_id;
 
     //--------------------------------------constructor vacío---------------------------
     public Book() {
     }
-//---------------------------------------getters y setters--------------------------
 
+    //---------------------------------------getters y setters--------------------------
     public String getIsbn() {
         return isbn;
     }
@@ -65,21 +66,32 @@ public class Book extends ModeloBase {
         this.dateB = fecha_alta;
     }
 
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
     //---------método abstracto que mete en modelo base-----------------
     @Override
     protected String getNombreTabla() {
         return "book";
     }
 
+
     //-------------------------------------toString---------------------------
     @Override
     public String toString() {
         return "Book{" +
-                "idlibros=" + idbook +
+                "idbook=" + idbook +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", author='" + author + '\'' +
-                ", fecha_alta=" + dateB +
+                ", isbn='" + isbn + '\'' +
+                ", dateB=" + dateB +
+                ", user_id=" + user_id +
                 '}';
     }
 
@@ -87,11 +99,11 @@ public class Book extends ModeloBase {
     public List<Book> getAll() {
         List<Book> bookList = new ArrayList<>();
         Book book = new Book();
-        Connection conn = book.getConnection();
-        String sql = "SELECT idBook, title, description, author, isbn, dateB FROM book";
+        Connection connection = book.getConnection();
+        String sql = "SELECT idBook, title, description, author, isbn, dateB, user_id FROM book";
         try {
-            Statement st = conn.createStatement();
-            ResultSet resultSet = st.executeQuery(sql);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
             bookList = readResultSet(resultSet);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -99,7 +111,22 @@ public class Book extends ModeloBase {
         return bookList;
     }
 
-    //readResultSet
+    public List<Book> getAllByUser(int iduser) {
+        List<Book> bookList = new ArrayList<>();
+        Book book1 = new Book();
+        Connection connection = book1.getConnection();
+        String sql = "SELECT idbook,title,description,author,isbn,dateB,user_id from book where user_id=?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, iduser);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            bookList = readResultSet(resultSet);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return bookList;
+    }
+
     private List<Book> readResultSet(ResultSet resultSet) throws SQLException {
         List<Book> bookList = new ArrayList<>();
         while (resultSet.next()) {
@@ -109,10 +136,10 @@ public class Book extends ModeloBase {
             book.setDescription(resultSet.getString("description"));
             book.setIsbn(resultSet.getString("isbn"));
             book.setAuthor(resultSet.getString("author"));
-            book.setDateB(resultSet.getDate("Date"));
+            book.setDateB(resultSet.getDate("dateB"));
+            book.setUser_id(resultSet.getInt("user_id"));
             bookList.add(book);
         }
         return bookList;
     }
-
 }

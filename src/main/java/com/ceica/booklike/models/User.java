@@ -1,11 +1,11 @@
 package com.ceica.booklike.models;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class User extends ModeloBase{
-    //Atributos de User
     private int iduser;
     private String name;
     private String pass;
@@ -23,43 +23,12 @@ public class User extends ModeloBase{
         this.iduser = iduser;
     }
 
-    public String getName() {
+    public String getname() {
         return name;
     }
 
-    public void setName(String username) {
-        this.name = username;
-    }
-
-    public String getPassword() {
-        return pass;
-    }
-
-    public void setPassword(String pass) {
-        this.pass = pass;
-    }
-
-    public User login(String username, String pass) {
-        User user = new User();
-        Connection conn = user.getConnection();
-        String sql = "select iduser,name from " +
-                "where username=? and pass=?";
-        try {
-            PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setString(1, username);
-            pst.setString(2, pass);
-            ResultSet resultSet = pst.executeQuery();
-            if (resultSet.next()) {
-                user.iduser = resultSet.getInt("iduser");
-                user.name = resultSet.getString("username");
-
-                return user;
-            } else {
-                return null;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public void setname(String name) {
+        this.name = name;
     }
 
     public void setPass (String pass){
@@ -71,38 +40,36 @@ public class User extends ModeloBase{
 
     @Override
     protected String getNombreTabla() {
-        return null;
+        return "user";
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "iduser=" + iduser +
-                ", username='" + name + '\'' +
+                ", name='" + name + '\'' +
                 ", pass='" + pass + '\'' +
                 '}';
     }
 
-    public List<User> getAll() {
-        List<User> userList = new ArrayList<>();
+    public User login(String name, String pass) {
         User user = new User();
         Connection conn = user.getConnection();
-        String consulta = "SELECT iduser, name, pass, DateU FROM user";
+        String sql = "select iduser,name from user where name=? and pass=?";
         try {
-            Statement stm = conn.createStatement();
-            ResultSet resultSet = stm.executeQuery(consulta);
-            while (resultSet.next()) {
-                User user1 = new User();
-                user1.setIduser(resultSet.getInt("iduser"));
-                user1.setName(resultSet.getString("name"));
-                user1.setPass(resultSet.getString("pass"));
-                //user1.setDateU(resultSet.getDate("DateU"));
-                userList.add(user1);
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, name);
+            pst.setString(2, pass);
+            ResultSet resultSet = pst.executeQuery();
+            if (resultSet.next()) {
+                user.iduser = resultSet.getInt("iduser");
+                user.name = resultSet.getString("name");
+                return user;
+            } else {
+                return null;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return userList;
     }
-
 }

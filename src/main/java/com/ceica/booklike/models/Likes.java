@@ -7,10 +7,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Likes extends ModeloBase {
+public class Like extends ModeloBase {
     private int idlike;
 
-    public Likes() {
+    public Like() {
     }
 
     public int getIdlike() {
@@ -33,22 +33,36 @@ public class Likes extends ModeloBase {
                 '}';
     }
 
-    public List<Likes> getAll() {
-        List<Likes> likesList = new ArrayList<>();
-        Likes likes = new Likes();
+    public List<Like> getAll() {
+        List<Like> likeList = new ArrayList<>();
+        Like likes = new Like();
         Connection connection = likes.getConnection();
-        String consulta = "select idlike from like";
+        String consulta = "SELECT book_id, COUNT(book_id) AS likes FROM `like` GROUP BY book_id";
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(consulta);
-            while (resultSet.next()) {
-                Likes like1 = new Likes();
-                like1.setIdlike(resultSet.getInt("idlike"));
-                likesList.add(like1);
-            }
+            likeList = readResultSet(resultSet);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return likesList;
+        return likeList;
+    }
+
+    private List<Like> readResultSet(ResultSet resultSet) throws SQLException {
+        List<Like> likeList = new ArrayList<>();
+        while (resultSet.next()) {
+            Like like = new Like();
+            like.set
+
+            book.setIdbook(resultSet.getInt("idBook"));
+            book.setTitle(resultSet.getString("title"));
+            book.setDescription(resultSet.getString("description"));
+            book.setIsbn(resultSet.getString("isbn"));
+            book.setAuthor(resultSet.getString("author"));
+            book.setDateB(resultSet.getDate("dateB"));
+            book.setUser_id(resultSet.getInt("user_id"));
+            likeList.add(like);
+        }
+        return likeList;
     }
 }

@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dff6d790-375c-42da-b3d6-52781b927df0" name="Changes" comment="Cambio de libros a book">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ceica/booklike/controller/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ceica/booklike/models/Likes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ceica/booklike/models/User.java" afterDir="false" />
+    <list default="true" id="dff6d790-375c-42da-b3d6-52781b927df0" name="Changes" comment="Añadidos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceica/booklike/models/ModeloBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceica/booklike/models/ModeloBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,21 +43,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "sofia",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Lenovo/IdeaProjects/bookLikes/src/main/java/com/ceica/booklike",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sofia&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/IdeaProjects/bookLikes/src/main/java/com/ceica/booklike&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\IdeaProjects\bookLikes\src\main\java\com\ceica\booklike" />
@@ -107,7 +103,8 @@
       <updated>1709577460286</updated>
       <workItem from="1709577462158" duration="3000" />
       <workItem from="1709578433463" duration="139000" />
-      <workItem from="1709650414960" duration="5382000" />
+      <workItem from="1709650414960" duration="5886000" />
+      <workItem from="1709736788115" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="Mi rama">
       <option name="closed" value="true" />
@@ -141,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709655562132</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Añadidos">
+      <option name="closed" value="true" />
+      <created>1709658844918</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709658844918</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +157,7 @@
     <MESSAGE value="Modelo libro" />
     <MESSAGE value="Modelo libro (el modelo base es para que no me de errores)." />
     <MESSAGE value="Cambio de libros a book" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio de libros a book" />
+    <MESSAGE value="Añadidos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadidos" />
   </component>
 </project>
